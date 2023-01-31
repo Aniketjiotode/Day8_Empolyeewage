@@ -11,7 +11,7 @@ namespace Empolyee_Wage
             Console.WriteLine("Enter Employee Name: ");
             string name = Console.ReadLine();
             Random random = new Random();
-            int isPresent = random.Next(0, 3);
+            int isPresent;
             int dayHour = 8;
             int wagePerHour = 20;
             int partimeHour = 4;
@@ -21,7 +21,7 @@ namespace Empolyee_Wage
 
             for (int i = 0; i < dayPerMonth; i++)
             {
-
+                isPresent = random.Next(0, 3);
                 switch (isPresent)
                 {
                     case 0:
@@ -44,9 +44,6 @@ namespace Empolyee_Wage
 
             int monthlyWage = totalHour * wagePerHour;
             Console.WriteLine($"{name} Monthly wage= {monthlyWage}");
-
-
-
 
         }
     }
