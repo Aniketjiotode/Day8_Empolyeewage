@@ -6,6 +6,7 @@ namespace Empolyee_Wage
     {
         static void Main(string[] args)
         {
+
             Console.WriteLine("Welcome To Employee Wage App");
             Console.WriteLine("Enter Employee Name: ");
             string name = Console.ReadLine();
@@ -13,29 +14,40 @@ namespace Empolyee_Wage
             int isPresent = random.Next(0, 3);
             int dayHour = 8;
             int wagePerHour = 20;
-            int dailyWage = 0;
             int partimeHour = 4;
+            int dayPerMonth = 20;
+            int totalHour = 0;
 
-            switch (isPresent)
+
+            for (int i = 0; i < dayPerMonth; i++)
             {
-                case 0:
-                    Console.WriteLine(name + " is Absent");
-                    Console.WriteLine($"Daily Wage = {dailyWage}");
-                    break;
 
-                case 1:
-                    Console.WriteLine(name + " is Present");
-                    dailyWage = dayHour * wagePerHour;
-                    Console.WriteLine($"Daily Wage = {dailyWage}");
-                    break;
+                switch (isPresent)
+                {
+                    case 0:
+                        totalHour += 0;
+                        break;
 
-                case 2:
-                    Console.WriteLine(name + " is Present for half day ");
-                    dailyWage = partimeHour * wagePerHour;
-                    Console.WriteLine($"Daily Wage = {dailyWage}");
-                    break;
+
+                    case 1:
+                        totalHour += dayHour;
+                        break;
+
+
+                    case 2:
+                        totalHour += partimeHour;
+                        break;
+
+                }
 
             }
+
+            int monthlyWage = totalHour * wagePerHour;
+            Console.WriteLine($"{name} Monthly wage= {monthlyWage}");
+
+
+
+
         }
     }
 }
