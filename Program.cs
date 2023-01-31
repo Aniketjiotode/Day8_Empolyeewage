@@ -16,23 +16,24 @@ namespace Empolyee_Wage
             int dailyWage = 0;
             int partimeHour = 4;
 
-            if (isPresent == 0)
+            switch (isPresent)
             {
+                case 0:
+                    Console.WriteLine(name + " is Absent");
+                    Console.WriteLine($"Daily Wage = {dailyWage}");
+                    break;
 
-                Console.WriteLine(name + " is Absent");
-                Console.WriteLine($"Daily Wage = {dailyWage}");
-            }
-            else if (isPresent == 1)
-            {
-                Console.WriteLine(name + " is Present");
-                dailyWage = dayHour * wagePerHour;
-                Console.WriteLine($"Daily Wage = {dailyWage}");
-            }
-            else if (isPresent == 2)
-            {
-                Console.WriteLine(name + " is Present for half day ");
-                dailyWage = partimeHour * wagePerHour;
-                Console.WriteLine($"Daily Wage = {dailyWage}");
+                case 1:
+                    Console.WriteLine(name + " is Present");
+                    dailyWage = dayHour * wagePerHour;
+                    Console.WriteLine($"Daily Wage = {dailyWage}");
+                    break;
+
+                case 2:
+                    Console.WriteLine(name + " is Present for half day ");
+                    dailyWage = partimeHour * wagePerHour;
+                    Console.WriteLine($"Daily Wage = {dailyWage}");
+                    break;
 
             }
         }
